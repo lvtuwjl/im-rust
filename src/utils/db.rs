@@ -13,12 +13,12 @@ pub fn global() -> &'static Pool {
 }
 
 // 启动的时候加载
-fn init() {
+pub fn init() {
     MYSQLDB.set(init_mysql().unwrap());
 }
 // 初始化数据库连接
 pub fn init_mysql() -> Result<Pool> {
-    let url = "mysql://test11:12345678@localhost:3306/rust11";
+    let url = "mysql://verse_tech:verse_tech@mysql-server:3306/verse_tech";
     let url = Opts::from_url(url).expect("url 转化出错!");
     let pool = Pool::new(url).expect("Pool 1122!");
 
